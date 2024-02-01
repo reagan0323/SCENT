@@ -3,18 +3,26 @@ Gaussian graphical models are widely used to study the dependence structure amon
 
 This package implements an ADMM algorithm to conduct Simultaneous Clustering and Estimation of Networks.
 
-To install the package, run the following code in R:
+## Installation 
 
 library(devtools)
+
 install_github("reagan0323/SCENT")
 
-A toy example of the SCENT function:
+
+
+## Example
 
 library(SCENT)
+
 SS=rWishart(6,20,0.01*diag(20))
-out=SCENT(SS,r=2,nn=rep(100,6),
-              rho=50)
+
+out=SCENT(SS,r=2,nn=rep(100,6),rho=50)
+
 par(mfrow=c(1,2))
+
 plot(out$primal)
+
 plot(out$dual)
+
 out$U
